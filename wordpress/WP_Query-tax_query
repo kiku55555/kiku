@@ -1,0 +1,12 @@
+$slug_arr[] = "sws-secret-1";
+$slug_arr[] = "sws-secret-5";
+
+$taxquery = array(
+    array(
+        'taxonomy' => 'sws-secret',
+        'field' => 'slug',
+        'terms' => $slug_arr,  //表示させないslug名をセット
+        'operator'=>'NOT IN'
+    )
+);
+$query->set( 'tax_query' , $taxquery );
